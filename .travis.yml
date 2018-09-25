@@ -14,15 +14,14 @@
 # limitations under the License.
 
 language: java
-#sudo: false
+sudo: false
 
 dist: trusty
 
 matrix:
    include:
    - jdk: openjdk6
-     env: JDK_RELEASE='OpenJDK 6' ARCH=x86
-     sudo: required
+     env: JDK_RELEASE='OpenJDK 6' ARCH=x86 
    - jdk: openjdk7
      env: JDK_RELEASE='OpenJDK 7' ARCH=x86
    - jdk: oraclejdk8
