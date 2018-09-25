@@ -21,13 +21,10 @@ dist: trusty
 matrix:
    include:
    - jdk: openjdk6
-     os: linux
      env: JDK_RELEASE='OpenJDK 6' ARCH=x86
    - jdk: openjdk7
-     os: linux
      env: JDK_RELEASE='OpenJDK 7' ARCH=x86
    - jdk: oraclejdk8
-     os: linux
      env: JDK_RELEASE='OracleJDK 8' ARCH=x86
    - jdk: openjdk8
      os: linux-ppc64le
