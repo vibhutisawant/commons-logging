@@ -16,12 +16,27 @@
 language: java
 sudo: false
 
-dist: precise
+dist: trusty
 
-jdk:
-  - openjdk6
-  - openjdk7
-  - oraclejdk8
+matrix:
+   include:
+   - jdk: openjdk6
+     os: linux
+     env: JDK_RELEASE='OpenJDK 6' ARCH=x86
+   - jdk: openjdk7
+     os: linux
+     env: JDK_RELEASE='OpenJDK 7' ARCH=x86
+   - jdk: oraclejdk8
+     os: linux
+     env: JDK_RELEASE='OracleJDK 8' ARCH=x86
+   - jdk: openjdk8
+     os: linux-ppc64le
+     env: JDK_RELEASE='OpenJDK 8' ARCH=ppc64le
+
+#jdk:
+#  - openjdk6
+#  - openjdk7
+#  - oraclejdk8
 
 after_success:
   - mvn clean cobertura:cobertura coveralls:report
